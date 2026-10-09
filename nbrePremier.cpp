@@ -29,7 +29,9 @@ int main () {
             saisie_user= 0;
             std::cout<<"entrer une valeur [2-1000] : ";
             std::cin>>saisie_user;
+            std::cin.clear();
             std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
         }
         while (saisie_user < 2 ||saisie_user > 1000);
         //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne
