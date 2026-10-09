@@ -22,7 +22,7 @@ int main () {
     char validation_user;
     do {
         //nombre de colonne de notre tableau
-        const int n_col = 5;
+        const int n_col = 7;
         //Chiffre qui sera demander d'être saisie par le user
         int saisie_user;
         do {
