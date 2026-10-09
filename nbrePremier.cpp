@@ -22,7 +22,7 @@ int main () {
     char validation_user;
     do {
         //nombre de colonne de notre tableau
-        const int n_col = 2;
+        const int n_col = 5;
         //Chiffre qui sera demander d'être saisie par le user
         int saisie_user;
         do {
@@ -47,13 +47,9 @@ int main () {
                     //Si le chiffre n'est divisible par aucun des chiffres jusqu'à la moitier, il s'agit d'un nombre premier
                     if (i/2 == 1 || t > (i/2)+1)
                     {
-                        if (compteurligne != n_col)
-                        {
-                            std::cout<<std::setw(10)<<i<<" ";
-                            compteurligne++;
-                        }
-                        else
-                        {
+                        std::cout<<std::setw(10)<<i<<" ";
+                        compteurligne++;
+                        if (compteurligne == n_col) {
                             //Si notre nombre de sortie atteint notre nombre de colonnes
                             //insertion d'un retour à la ligne et réintialisation du compteur
                             std::cout<<std::endl;
