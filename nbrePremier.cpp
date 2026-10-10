@@ -1,8 +1,8 @@
 /*
   ------------------------------------------------------------------------------
   Fichier     : nbre_1er.cpp
-  Auteur(s)   :Maxime Schmidhauser
-  Date        :
+  Auteur(s)   : Maxime Schmidhauser
+  Date        : 11.10.2026
 
   But         : identifier tous les nombres premiers compris
                 et une valeur choisie par l'utilisateur
@@ -24,46 +24,46 @@ int main () {
         //nombre de colonne de notre tableau
         const int n_col = 5;
         //Chiffre qui sera demander d'être saisie par le user
-        int saisie_user;
-        do {
-            saisie_user= 0;
+        int limite =0;
+        do
+        {
             std::cout<<"entrer une valeur [2-1000] : ";
-            std::cin>>saisie_user;
+            std::cin>>limite;
             std::cin.clear();
             std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
         }
-        while (saisie_user < 2 ||saisie_user > 1000);
-        //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne
-        //Pour respecter les dimmensions de notre tableau
-        int compteurligne =0;
+        while (limite < 2 ||limite > 1000);
+        //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne pour respecter les dimmensions de notre tableau
+        int compteurligne = 0;
         std::cout<<"Voici la liste des nombres premiers"<<std::endl;
         //Boucle qui va vérifier si le nombre en cours à plus de deux diviseurs (lui-même et 1)
-        for (int i =2; i <= saisie_user; i++)
+        for (int i =2; i <= limite; i++)
         {
-                //Nous divisons notre chiffre par tous les chiffres en dessous
-                for (int t = 2; t <= i; t++)
+            //Nous divisons notre chiffre par tous les chiffres en dessous de la moitier de notre chiffre
+            for (int t = 2; t <= i; t++)
+            {
+                //Si le chiffre n'est divisible par aucun des chiffres jusqu'à la moitier, il s'agit d'un nombre premier
+                if (i/2 == 1 || t > (i/2)+1)
                 {
-                    //Si le chiffre n'est divisible par aucun des chiffres jusqu'à la moitier, il s'agit d'un nombre premier
-                    if (i/2 == 1 || t > (i/2)+1)
+                    std::cout<<std::setw(10)<<i<<" ";
+                    compteurligne++;
+                    if (compteurligne == n_col)
                     {
-                        std::cout<<std::setw(10)<<i<<" ";
-                        compteurligne++;
-                        if (compteurligne == n_col) {
-                            //Si notre nombre de sortie atteint notre nombre de colonnes
-                            //insertion d'un retour à la ligne et réintialisation du compteur
-                            std::cout<<std::endl;
-                            compteurligne=0;
-                        }
-                        break;
+                        //Si notre nombre de sortie atteint notre nombre de colonnes
+                        //insertion d'un retour à la ligne et réintialisation du compteur
+                        std::cout<<std::endl;
+                        compteurligne=0;
                     }
-                    //Si le modulo est 0, c'est qu'il a trouver un diviseur et donc que le chiffre n'est pas premier
-                    if (i%t==0)
-                    {
-                        //Sortie de la boucle en cours car pas besoin de tester plus loin, on sait qu'il n'est pas premier
-                        break;
-                    }
+                    //Sortie de la boucle car c'est un nombre premier
+                    break;
                 }
+                //Si le modulo est 0, c'est qu'il a trouver un diviseur et donc que le chiffre n'est pas premier
+                if (i%t==0)
+                {
+                    //Sortie de la boucle en cours car pas besoin de tester plus loin, on sait qu'il n'est pas premier
+                    break;
+                }
+            }
         }
         //Affichage du menu pour recommencer
         do
@@ -75,5 +75,5 @@ int main () {
     }
     //Si l'utilisateur tape O, le programme recommence
     while (validation_user =='O');
-    return EXIT_SUCCESS;
+return EXIT_SUCCESS;
 }
