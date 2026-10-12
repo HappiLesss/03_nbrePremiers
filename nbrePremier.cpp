@@ -20,9 +20,9 @@ using namespace std;
 
 int main () {
     char validation_user;
+    //nombre de colonne de notre tableau
+    const int n_col = 5;
     do {
-        //nombre de colonne de notre tableau
-        const int n_col = 5;
         //Chiffre qui sera demander d'être saisie par le user
         int limite = 0;
         do
