@@ -34,7 +34,7 @@ int main () {
         }
         while (limite < 2 || limite > 1000);
         //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne pour respecter les dimmensions de notre tableau
-        int compteurligne = 0;
+        int compteur_colonne = 0;
         std::cout<<"Voici la liste des nombres premiers"<<std::endl;
         //Boucle qui va vérifier si le nombre en cours à plus de deux diviseurs (lui-même et 1)
         for (int i =2; i <= limite; i++)
@@ -46,13 +46,13 @@ int main () {
                 if (i/2 == 1 || t > (i/2)+1)
                 {
                     std::cout<<std::setw(10)<<i<<" ";
-                    compteurligne++;
-                    if (compteurligne == n_col)
+                    compteur_colonne++;
+                    if (compteur_colonne == n_col)
                     {
                         //Si notre nombre de sortie atteint notre nombre de colonnes
                         //insertion d'un retour à la ligne et réintialisation du compteur
                         std::cout<<std::endl;
-                        compteurligne = 0;
+                        compteur_colonne = 0;
                     }
                     //Sortie de la boucle car c'est un nombre premier
                     break;
@@ -77,5 +77,6 @@ int main () {
     }
     //Si l'utilisateur tape O, le programme recommence
     while (validation_user =='O');
+    std::cout<<"Fin de programme";
 return EXIT_SUCCESS;
 }
