@@ -21,8 +21,8 @@ PseudoCode Nombre premier:
 						1. Sort de la boucle
 3. Affichage du menu pour recommencer
 4. Vérifier si la saisie est correcte
-	1 Si la saisie != 'O' AND saisie != 'N'
-	2 Alors la saisie est redemandée
+	1. Si la saisie != 'O' AND saisie != 'N'
+	2. Alors la saisie est redemandée
 5. Fin de programme ou recommencer
 	1. Si la saisie == 'O'
 	2. Alors on recommence le programme
