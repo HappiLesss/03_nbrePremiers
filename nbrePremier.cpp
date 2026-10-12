@@ -27,11 +27,13 @@ int main () {
         int limite = 0;
         do
         {
+            //Demande de saisie de chiffre à l'utilisateur
             std::cout<<"entrer une valeur [2-1000] : ";
             std::cin>>limite;
             std::cin.clear();
             std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
+        //Si la saisie et en dehors de la tranche, demande de resaisir
         while (limite < 2 || limite > 1000);
         //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne pour respecter les dimmensions de notre tableau
         int compteur_colonne = 0;
@@ -73,6 +75,7 @@ int main () {
             std::cin.clear();
             std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
+        //Si le user tappe un autre charactère que ceux demandés, demande de resaisie
         while (validation_user != 'O' && validation_user != 'N');
     }
     //Si l'utilisateur tape O, le programme recommence
