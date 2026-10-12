@@ -2,7 +2,7 @@
   ------------------------------------------------------------------------------
   Fichier     : nbre_1er.cpp
   Auteur(s)   : Maxime Schmidhauser
-  Date        : 11.10.2026
+  Date        : 12.10.2026
 
   But         : identifier tous les nombres premiers compris
                 et une valeur choisie par l'utilisateur
@@ -24,7 +24,7 @@ int main () {
         //nombre de colonne de notre tableau
         const int n_col = 5;
         //Chiffre qui sera demander d'être saisie par le user
-        int limite =0;
+        int limite = 0;
         do
         {
             std::cout<<"entrer une valeur [2-1000] : ";
@@ -32,7 +32,7 @@ int main () {
             std::cin.clear();
             std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-        while (limite < 2 ||limite > 1000);
+        while (limite < 2 || limite > 1000);
         //Compteur qui nous premettera de définir lorsque nous devons faire un retour à la ligne pour respecter les dimmensions de notre tableau
         int compteurligne = 0;
         std::cout<<"Voici la liste des nombres premiers"<<std::endl;
@@ -52,7 +52,7 @@ int main () {
                         //Si notre nombre de sortie atteint notre nombre de colonnes
                         //insertion d'un retour à la ligne et réintialisation du compteur
                         std::cout<<std::endl;
-                        compteurligne=0;
+                        compteurligne = 0;
                     }
                     //Sortie de la boucle car c'est un nombre premier
                     break;
@@ -70,6 +70,8 @@ int main () {
         {
             std::cout<<std::endl<<"Voulez-vous recommencer [O/N] : ";
             std::cin>>validation_user;
+            std::cin.clear();
+            std::cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
         while (validation_user != 'O' && validation_user != 'N');
     }
